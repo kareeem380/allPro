@@ -1,0 +1,136 @@
+/* Your Angular component CSS styles */
+.center-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+  .mat-card-title {
+    margin: auto;
+    display: flex;
+    justify-content: space-around;
+    font-size: 29px;
+  }
+  
+  .form-card {
+    max-width: 600px; /* Adjust the max-width to your preference */
+    width: 100%;
+    padding: 20px;
+    background-color: #f0f0f0; /* Background color for the form card */
+    border-radius: 8px; /* Rounded corners for the form card */
+  }
+  
+  .select-container {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+  }
+  
+  h1, h2 {
+    color: #3f51b5de; /* Heading color */
+  }
+  
+  mat-form-field {
+    width: 100%;
+  }
+  
+  .mat-label {
+    font-weight: bold;
+  }
+  
+  .additional-field {
+    margin-left: 10px;
+  }
+  .icon-container { 
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+  }
+  
+  /* Style the icons */
+  
+  mat-icon {
+    width: auto;
+    height: auto;
+    cursor: pointer;
+    font-size: 48px; /* Set the font size to increase the icon container size */
+    margin: 0 10px; /* Increase the margin to add spacing between the icons */
+    color: #3f51b5de; /* Adjust the color as needed */
+    border: 2px solid transparent; /* Add transparent border initially */
+    border-radius: 10px; /* Add border radius for rounded corners */
+    transition: all 0.3s ease; /* Add smooth transition on hover */
+  }
+  
+  /* Style the SVG element inside the mat-icon */
+  mat-icon svg {
+    width: 48px; /* Set the width to adjust the icon size */
+    height: 48px; /* Set the height to adjust the icon size */
+  }
+  
+  /* Add hover effect to show border on hover */
+  mat-icon:hover {
+    border-color: #626262; /* Change the border color on hover */
+  }
+  
+  /* Style the SVG element inside the mat-icon */
+  mat-icon svg {
+    width: 48px; /* Set the width to adjust the icon size */
+    height: 48px; /* Set the height to adjust the icon size */
+  }
+  .additional-field2 {
+    margin-left: 10px;
+    width: 100%;
+  }
+  
+  .additional-field-big1 {
+    margin-right: 10px;
+    margin-left: 10px;
+    width: 300px;
+  }
+  .additional-field-big {
+    width: 300px;
+  }
+  
+  .gare-fields, .unlocode-fields {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  
+  .unlocode-fields mat-form-field {
+    flex: 1;
+  }
+  
+  .unlocode-fields mat-select {
+    width: 100%;
+  }
+  
+  /* Style for the "POIDS" field */
+  .additional-field-big2 input {
+    width: 100%; /* Make the input take all available width */
+  }
+  
+  /* Custom styling for the select dropdown */
+  .custom-select mat-form-field {
+    background-color: #ffffff; /* Set background color for the dropdown */
+    border: 1px solid #ccc; /* Add a border */
+    border-radius: 4px; /* Rounded corners for the dropdown */
+  }
+  
+  .custom-select mat-select-trigger {
+    color: #333; /* Color for the selected option */
+  }
+  
+  .custom-select mat-option {
+    padding: 8px 16px; /* Padding for the options */
+    transition: background-color 0.2s; /* Optional transition for hover effect */
+  }
+  
+  .custom-select mat-option:hover {
+    background-color: #f0f0f0; /* Background color on hover */
+  }
+  .selected-icon {
+    color: green;
+  }

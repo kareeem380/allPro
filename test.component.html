@@ -1,0 +1,201 @@
+<!-- Your Angular component HTML template -->
+<div class="center-container">
+    <mat-card class="form-card">
+        <mat-card-content>
+            <h2 class="mat-card-title">Pre-Carriage</h2>
+            <!-- Your Angular component HTML template -->
+            <div class="icon-container">
+                <mat-icon (click)="onIconClick('plane')" [ngClass]="{ 'selected-icon': selectedIcon === 'plane' }">
+                    flight
+                </mat-icon>
+                <mat-icon (click)="onIconClick('boat')" [ngClass]="{ 'selected-icon': selectedIcon === 'boat' }">
+                    directions_boat
+                </mat-icon>
+                <mat-icon (click)="onIconClick('truck')" [ngClass]="{ 'selected-icon': selectedIcon === 'truck' }">
+                    directions_bus
+                </mat-icon>
+            </div>
+
+            <form [formGroup]="formGroup">
+                <div class="select-container">
+                    <h2>Origine</h2>
+                    <mat-form-field class="select-field">
+                        <mat-label>Select Type</mat-label>
+                        <mat-select formControlName="option1" (selectionChange)="onOption1Change($event.value)">
+                            <mat-option *ngFor="let option of origineOptions" [value]="option.value">
+                                {{ option.label }}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+
+                <!-- Display additional fields for "Gare" option -->
+                <div *ngIf="isGareSelected" class="gare-fields">
+                    <mat-form-field class="additional-field-big">
+                        <mat-label>UIC</mat-label>
+                        <input matInput formControlName="uic" placeholder="Enter UIC code" />
+                    </mat-form-field>
+
+                    <mat-form-field class="additional-field-big1">
+                        <mat-label>CODE</mat-label>
+                        <input matInput formControlName="code" placeholder="Enter CODE" />
+                    </mat-form-field>
+
+                    <mat-form-field class="additional-field4">
+                        <mat-label>NOM</mat-label>
+                        <input matInput formControlName="nom" placeholder="Enter NOM" />
+                    </mat-form-field>
+                </div>
+
+                <div *ngIf="isZIPSelected" class="gare-fields">
+                    <mat-form-field class="additional-field-big">
+                        <mat-label>ZIP</mat-label>
+                        <input matInput formControlName="uic" placeholder="Enter UIC code" />
+                    </mat-form-field>
+
+                    <mat-form-field class="additional-field-big1">
+                        <mat-label> - CODE - </mat-label>
+                        <input matInput formControlName="code" placeholder="Enter CODE" />
+                    </mat-form-field>
+
+                    <mat-form-field class="additional-field2">
+                        <mat-label>NOM</mat-label>
+                        <input matInput formControlName="nom" placeholder="Enter NOM" />
+                    </mat-form-field>
+                </div>
+
+                <!-- Display a single text field for "Quartier" option -->
+                <div *ngIf="isQuartierSelected">
+                    <mat-form-field class="additional-field">
+                        <mat-label>Quartier Text Field</mat-label>
+                        <input matInput formControlName="nom" placeholder="Enter Quartier text">
+                    </mat-form-field>
+                </div>
+                <!-- Your Angular component HTML template -->
+                <!-- ... -->
+                <div *ngIf="isUnLocodeSelected" class="unlocode-fields">
+                    <mat-form-field class="additional-field-big2">
+                        <mat-label>UN/LOCODE</mat-label>
+                        <input matInput formControlName="code" placeholder="Enter CODE" />
+                    </mat-form-field>
+
+                    <mat-form-field class="additional-field">
+                        <mat-label>NOM</mat-label>
+                        <input matInput formControlName="nom" placeholder="Enter NOM" />
+                    </mat-form-field>
+                </div>
+
+                <div *ngIf="isAeroportSelected" class="unlocode-fields">
+                    <mat-form-field class="additional-field-big2">
+                        <mat-label>IATA</mat-label>
+                        <input matInput formControlName="code" placeholder="Enter CODE" />
+                    </mat-form-field>
+
+                    <mat-form-field class="additional-field4">
+                        <mat-label>NOM</mat-label>
+                        <input matInput formControlName="nom" placeholder="Enter NOM" />
+                    </mat-form-field>
+                </div>
+                <!-- ... -->
+
+
+                <div class="select-container">
+                    <h2>Destination</h2>
+                    <mat-form-field class="select-field">
+                        <mat-label>Select Destination</mat-label>
+                        <mat-select formControlName="option2" (selectionChange)="onOption1Change1($event.value)">
+                            <mat-option *ngFor="let option of destinationOptions" [value]="option.value">
+                                {{ option.label }}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+                <div *ngIf="isGareSelected1" class="gare-fields">
+                    <mat-form-field class="additional-field-big">
+                        <mat-label>ZIP</mat-label>
+                        <input matInput formControlName="uic" placeholder="Enter UIC code" />
+                    </mat-form-field>
+
+                    <mat-form-field class="additional-field-big1">
+                        <mat-label> - CODE - </mat-label>
+                        <input matInput formControlName="code" placeholder="Enter CODE" />
+                    </mat-form-field>
+
+                    <mat-form-field class="additional-field2">
+                        <mat-label>NOM</mat-label>
+                        <input matInput formControlName="nom" placeholder="Enter NOM" />
+                    </mat-form-field>
+                </div>
+
+                <div *ngIf="isZIPSelected1" class="gare-fields">
+                    <mat-form-field class="additional-field-big">
+                        <mat-label>ZIP</mat-label>
+                        <input matInput formControlName="uic" placeholder="Enter UIC code" />
+                    </mat-form-field>
+
+                    <mat-form-field class="additional-field-big1">
+                        <mat-label> - CODE - </mat-label>
+                        <input matInput formControlName="code" placeholder="Enter CODE" />
+                    </mat-form-field>
+
+                    <mat-form-field class="additional-field">
+                        <mat-label>NOM</mat-label>
+                        <input matInput formControlName="nom" placeholder="Enter NOM" />
+                    </mat-form-field>
+                </div>
+
+                <!-- Display a single text field for "Quartier" option -->
+                <div *ngIf="isQuartierSelected1">
+                    <mat-form-field class="additional-field">
+                        <mat-label>Quartier Text Field</mat-label>
+                        <input matInput formControlName="nom" placeholder="Enter Quartier text">
+                    </mat-form-field>
+                </div>
+                <!-- Your Angular component HTML template -->
+                <!-- ... -->
+                <div *ngIf="isUnLocodeSelected1" class="unlocode-fields">
+                    <mat-form-field class="additional-field-big2">
+                        <mat-label>UN/LOCODE</mat-label>
+                        <input matInput formControlName="code" placeholder="Enter CODE" />
+                    </mat-form-field>
+
+                    <mat-form-field class="additional-field">
+                        <mat-label>NOM</mat-label>
+                        <input matInput formControlName="nom" placeholder="Enter NOM" />
+                    </mat-form-field>
+                </div>
+
+                <div *ngIf="isAeroportSelected1" class="unlocode-fields">
+                    <mat-form-field class="additional-field-big2">
+                        <mat-label>IATA</mat-label>
+                        <input matInput formControlName="code" placeholder="Enter CODE" />
+                    </mat-form-field>
+
+                    <mat-form-field class="additional-field">
+                        <mat-label>NOM</mat-label>
+                        <input matInput formControlName="nom" placeholder="Enter NOM" />
+                    </mat-form-field>
+                </div>
+                <div class="select-container">
+                    <h2>Marchandise</h2>
+                    <div class="unlocode-fields">
+                        <mat-form-field class="additional-field-big2">
+                            <mat-label>POIDS</mat-label>
+                            <input matInput formControlName="code" placeholder="Enter CODE" />
+                        </mat-form-field>
+
+                        <!-- Replace the "NOM" input with a select field -->
+                        <mat-form-field class="additional-field">
+                            <mat-label>Pois</mat-label>
+                            <mat-select formControlName="nom">
+                                <mat-option value="KG">KG</mat-option>
+                                <mat-option value="Tonne">Tonne</mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                    </div>
+                </div>
+
+            </form>
+        </mat-card-content>
+    </mat-card>
+</div>
